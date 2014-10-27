@@ -38,4 +38,13 @@ class T1Test {
     assertTrue(jU.m() == sU.m())
   }
 
+  @Test
+  def v(): Unit = {
+    val jV4 = new jtraits.V4
+    val jV5 = new jtraits.V5
+    val sV4 = new straits.V4
+    val sV5 = new straits.V5
+    assertTrue(sV4.f() == jV4.f())
+    assertTrue(sV5.f() == jV5.f())
+  }
 }
