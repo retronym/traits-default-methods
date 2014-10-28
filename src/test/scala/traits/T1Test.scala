@@ -44,6 +44,8 @@ class T1Test {
     val jV5 = new jtraits.V5
     val sV4 = new straits.V4
     val sV5 = new straits.V5
+    assertTrue(sV4.f() == "V3.f")
+    assertTrue(sV5.f() == "V2.f")
     assertTrue(jV4.f() == sV4.f())
     assertTrue(jV5.f() == sV5.f())
 
@@ -51,7 +53,41 @@ class T1Test {
     val jV8 = new jtraits.V8
     val sV7 = new straits.V7
     val sV8 = new straits.V8
+    assertTrue(sV7.f() == "V2.f")
+    assertTrue(sV8.f() == "V3.f")
     assertTrue(jV7.f() == sV7.f())
     assertTrue(jV8.f() == sV8.f())
+  }
+
+  @Test
+  def w(): Unit = {
+    val sW5  = new straits.W5
+    val sW6  = new straits.W6
+    val sW7  = new straits.W7
+    val sW9  = new straits.W9
+    val sW10 = new straits.W10
+    val sW11 = new straits.W11
+    val sW12 = new straits.W12
+    val jW5  = new jtraits.W5
+    val jW6  = new jtraits.W6
+    val jW7  = new jtraits.W7
+    val jW9  = new jtraits.W9
+    val jW10 = new jtraits.W10
+    val jW11 = new jtraits.W11
+    val jW12 = new jtraits.W12
+    assertTrue(sW5.f()  == "W2.f from W3")
+    assertTrue(sW6.f()  == "W2.f from W3 from W4")
+    assertTrue(sW7.f()  == "W2.f from W4 from W3")
+    assertTrue(sW9.f()  == "W2.f from W3 from W8")
+    assertTrue(sW10.f() == "W2.f from W4 from W3 from W8")
+    assertTrue(sW11.f() == "W2.f from W3 from W8 from W4")
+    assertTrue(sW12.f() == "W2.f from W3 from W4 from W8")
+    assertTrue(jW5.f()  == sW5.f())
+    assertTrue(jW6.f()  == sW6.f())
+    assertTrue(jW7.f()  == sW7.f())
+    assertTrue(jW9.f()  == sW9.f())
+    assertTrue(jW10.f() == sW10.f())
+    assertTrue(jW11.f() == sW11.f())
+    assertTrue(jW12.f() == sW12.f())
   }
 }
