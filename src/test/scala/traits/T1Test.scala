@@ -44,7 +44,14 @@ class T1Test {
     val jV5 = new jtraits.V5
     val sV4 = new straits.V4
     val sV5 = new straits.V5
-    assertTrue(sV4.f() == jV4.f())
-    assertTrue(sV5.f() == jV5.f())
+    assertTrue(jV4.f() == sV4.f())
+    assertTrue(jV5.f() == sV5.f())
+
+    val jV7 = new jtraits.V7
+    val jV8 = new jtraits.V8
+    val sV7 = new straits.V7
+    val sV8 = new straits.V8
+    assertTrue(jV7.f() == sV7.f())
+    assertTrue(jV8.f() == sV8.f())
   }
 }
