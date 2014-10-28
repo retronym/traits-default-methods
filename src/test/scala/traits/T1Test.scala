@@ -90,4 +90,12 @@ class T1Test {
     assertTrue(jW11.f() == sW11.f())
     assertTrue(jW12.f() == sW12.f())
   }
+
+  @Test
+  def x(): Unit = {
+    val sX4 = new straits.X4
+    val jX4 = new jtraits.X4
+    assertTrue(sX4.h() == "X4.f from X2 from X3")
+    assertTrue(jX4.h() == sX4.h())
+  }
 }
