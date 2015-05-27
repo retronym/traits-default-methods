@@ -1,9 +1,12 @@
 package traits
 
+import jtraits.Z
+import jtraits.Z.Z1
 import org.junit.{Assert, Test}
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import Assert._
+import straits.Z3
 
 @RunWith(classOf[JUnit4])
 class T1Test {
@@ -98,4 +101,11 @@ class T1Test {
     assertTrue(sX4.h() == "X4.f from X2 from X3")
     assertTrue(jX4.h() == sX4.h())
   }
+
+  @Test
+  def z(): Unit = {
+    assertEquals("Z2.f", (new Z.ZMix).f) // fails, Z1.f
+    assertEquals("Z2.f", new straits.Z3 {}.f)
+  }
+
 }
